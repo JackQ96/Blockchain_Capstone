@@ -35,7 +35,7 @@ contract Ownable {
 contract Pausable is Ownable {
     bool private _paused;
 
-    function getPaused() public onlyOwner {
+    function getPaused() public view returns (bool) {
         return _paused;
     }
 
