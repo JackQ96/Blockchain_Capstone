@@ -7,7 +7,7 @@ import 'openzeppelin-solidity/contracts/token/ERC721/IERC721Receiver.sol';
 import "./Oraclize.sol";
 
 contract Ownable {
-    address private _owner;
+    address public _owner;
 
     
     event OwnerTransferred(address newOwner);
@@ -511,12 +511,13 @@ contract ERC721Token is ERC721Metadata{
     constructor(string memory name, string memory symbol)
         ERC721Metadata(name, symbol, 'https://s3-us-west-2.amazonaws.com/udacity-blockchain/capstone/')
         public
-    {}
+    {
+
+    }
 
     function mint(address to, uint256 tokenId) public returns(bool) {
         super._mint(to, tokenId);
         setTokenURI(tokenId);
-        return true;
     }
 }
 

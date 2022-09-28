@@ -6,10 +6,15 @@ import "./ERC721Mintable.sol";
 
 contract Verifier {
     function verifyTx(
-        uint[2] memory a,
-        uint[2][2] memory b,
-        uint[2] memory c,
-        uint[2] memory inputs
+        uint[2] memory A,
+        uint[2] memory A_p,
+        uint[2][2] memory B,
+        uint[2] memory B_p,
+        uint[2] memory C,
+        uint[2] memory C_p,
+        uint[2] memory H,
+        uint[2] memory K,
+        uint[2] memory input
     )
 
     public
@@ -55,17 +60,22 @@ contract SolnSquareVerifier is ERC721Token {
 
 // TODO Create a function to add the solutions to the array and emit the event
     function addToArray(
-        uint[2] memory a,
-        uint[2][2] memory b,
-        uint[2] memory c,
-        uint[2] memory inputs
+        uint[2] memory A,
+        uint[2] memory A_p,
+        uint[2][2] memory B,
+        uint[2] memory B_p,
+        uint[2] memory C,
+        uint[2] memory C_p,
+        uint[2] memory H,
+        uint[2] memory K,
+        uint[2] memory input
     )
     public
     {
-        bytes32 solHash = keccak256(abi.encodePacked(inputs[0], inputs[1]));
+        bytes32 solHash = keccak256(abi.encodePacked(input[0], input[1]));
         require(solutions[solHash].solutionAddress == address(0), "Already exists");
 
-        bool verified = verifierContract.verifyTx(a, b, c, inputs);
+        bool verified = verifierContract.verifyTx(A, A_p, B, B_p, C, C_p, H, K, input);
         require(verified, "Verification failed");
 
         solutions[solHash] = Solution(numOfSol, msg.sender, false);

@@ -1,29 +1,41 @@
 var verifier = artifacts.require('verifier');
 var json = require('./proof.json');
 
-const account_one = accounts[0];
 
 contract('verifier', accounts => {
+    const owner = accounts[0];
+
+    
     describe('Correct test verification', function() {
         beforeEach(async function() {
-            this.contract = await verifier.new({ from: account_one});
+            this.instance = await verifier.new({ from: owner });
         })
         it('Correct proof verification', async function() {
-            let verified = await this.contract.verifyTx.call(json.proof.a,
-                                                            json.proof.b,
-                                                            json.proof.c,
-                                                            json.proof.inputs,
-                                                             { from: account_one });
+            let verified = await this.instance.verifyTx.call(json.proof.A,
+                                                        json.proof.A_p,
+                                                        json.proof.B,
+                                                        json.proof.B_p,
+                                                        json.proof.C,
+                                                        json.proof.C_p,
+                                                        json.proof.H,
+                                                        json.proof.K,
+                                                        json.input
+                                                        );
             assert.equal(verified, true, "Verification completed succesfully");
         })
 
         it('Incorrect proof verification', async function() {
-            json.inputs = [7, 2];
-            let verified = await this.contract.verifyTx.call(json.proof.a,
-                                                            json.proof.b,
-                                                            json.proof.c,
-                                                            json.proof.inputs,
-                                                            { from: account_one });
+            json.input = [7, 2];
+            let verified = await this.instance.verifyTx.call(json.proof.A,
+                                                        json.proof.A_p,
+                                                        json.proof.B,
+                                                        json.proof.B_p,
+                                                        json.proof.C,
+                                                        json.proof.C_p,
+                                                        json.proof.H,
+                                                        json.proof.K,
+                                                        json.input
+                                                        );
             assert.equal(verified, false, "Verification completed succesfully");
         })
     })
