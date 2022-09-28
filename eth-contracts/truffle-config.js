@@ -18,10 +18,10 @@
  *
  */
 
-const HDWalletProvider = require('truffle-hdwallet-provider');
+const HDWalletProvider = require('@truffle/hdwallet-provider');
+const fs = require('fs');
 const mnemonic = fs.readFileSync(".secret").toString().trim();
 //
-// const fs = require('fs');
 // const mnemonic = fs.readFileSync(".secret").toString().trim();
 
 module.exports = {
@@ -49,7 +49,7 @@ module.exports = {
      },
 
      rinkeby: {
-        provider: () => new HDWalletProvider(mnemonic, `https://rinkeby.infura.io/v3/bdf45240d0494177861507a522e08327`),
+        provider: () => new HDWalletProvider(mnemonic, `https://rinkeby.infura.io/v3/3d0b9c97a4fd4b1e84bba45a9377f55e`),
         network_id: 4,       // Ropsten's id
         gas: 5000000,        // Ropsten has a lower block limit than mainnet
         gasPrice: 10000000000,
