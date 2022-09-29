@@ -1,6 +1,6 @@
 # Udacity Blockchain Capstone
 
-Capstone is the final project for the Udacity Blockchain Nano Degree. This project focused on creating smart contracts to be able to mint your own ERC721 tokens to represent properties for sale. During this project I made use of Zocrates(ZK-SNARK) and Docker to be able to verify ownership without having to provide any confidential details about the property. Finally, I minted 10 tokens onto Rinkeby test net (using MyEtherWallet) and listed 5 of them on Opensea marketplace.
+Capstone is the final project for the Udacity Blockchain Nano Degree. This project focused on creating smart contracts to be able to mint your own ERC721 tokens to represent properties for sale. During this project I made use of Zocrates(ZK-SNARK) and Docker to be able to verify ownership without having to provide any confidential details about the property. Finally, I minted 10 tokens onto Rinkeby test net (using MyEtherWallet).
 
 ## Versions
 
@@ -77,13 +77,7 @@ truffle test ./test/TestSolnSquareVerifier.js
 Contract Address: 0x0d3A736E6657516DCc37D877B19107839a3D4Db0
 URL: https://rinkeby.etherscan.io/address/0x0d3a736e6657516dcc37d877b19107839a3d4db0
 
-Open sea Tokens:
 
-1)
-2)
-3)
-4)
-5)
 
 
 
