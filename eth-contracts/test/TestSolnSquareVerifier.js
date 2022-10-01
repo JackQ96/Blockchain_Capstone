@@ -22,7 +22,7 @@ contract('SolnSquareVerifier', acc => {
         })
 
         it('Allow to add the new solution', async function () {
-          let res = await this.instance.addToArray(jproof.proof.A, jproof.proof.A_p, jproof.proof.B, jproof.proof.B_p, jproof.proof.C, jproof.proof.C_p, jproof.proof.H, jproof.proof.K, jproof.proof.input,{ from: receiver });
+          let res = await this.instance.addToArray(jproof.proof.A, jproof.proof.A_p, jproof.proof.B, jproof.proof.B_p, jproof.proof.C, jproof.proof.C_p, jproof.proof.H, jproof.proof.K, jproof.input,{ from: receiver });
           assert.equal(res.logs[0].args[1], receiver,"Address does not match");
         });
   });
@@ -35,9 +35,9 @@ contract('SolnSquareVerifier', acc => {
 
         it('Allow ERC721 mint', async function () {
 
-          let result = await this.instance.addToArray(jproof.proof.A, jproof.proof.A_p, jproof.proof.B, jproof.proof.B_p, jproof.proof.C, jproof.proof.C_p, jproof.proof.H, jproof.proof.K, jproof.proof.input, {from:owner});
+          let result = await this.instance.addToArray(jproof.proof.A, jproof.proof.A_p, jproof.proof.B, jproof.proof.B_p, jproof.proof.C, jproof.proof.C_p, jproof.proof.H, jproof.proof.K, jproof.input, {from:owner});
           assert.equal(result.logs[0].args[1], owner,"Address does not match");
-          await this.instance.mintNFT(json.inputs[0],json.inputs[1],receiver,{from:owner});
+          await this.instance.mintNFT(jproof.input[0],jproof.input[1],receiver,{from:owner});
           let bal = await this.instance.balanceOf(receiver);
           assert.equal(parseInt(bal), 1, "Incorrect balance");
 

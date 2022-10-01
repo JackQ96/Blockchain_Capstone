@@ -198,7 +198,7 @@
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 9101,
+                        "referencedDeclaration": 10729,
                         "src": "158:3:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
@@ -282,7 +282,7 @@
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 9101,
+                        "referencedDeclaration": 10729,
                         "src": "209:3:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
@@ -847,7 +847,7 @@
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 9101,
+                        "referencedDeclaration": 10729,
                         "src": "158:3:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
@@ -931,7 +931,7 @@
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 9101,
+                        "referencedDeclaration": 10729,
                         "src": "209:3:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
@@ -1373,16 +1373,9 @@
     "name": "solc",
     "version": "0.5.1+commit.c8a2cb62.Emscripten.clang"
   },
-  "networks": {
-    "1664383728628": {
-      "events": {},
-      "links": {},
-      "address": "0xc8ae60bB89c58D9bAFA79C8239530Cd6aF0DfBf1",
-      "transactionHash": "0x953e575b5a34afd0190ef11e580886f29a6d0ebb4946598b36fb4256874053d0"
-    }
-  },
+  "networks": {},
   "schemaVersion": "3.0.11",
-  "updatedAt": "2022-09-28T22:32:35.583Z",
+  "updatedAt": "2022-10-01T19:09:43.542Z",
   "devdoc": {
     "methods": {}
   },
